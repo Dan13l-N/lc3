@@ -170,6 +170,7 @@ div_mod:
 		brp div_not1
 		add r1, r0, #0 ; r1 = r0 (quotient)
 		and r0, r0, #0 ; r0 = 0 (remainder)
+	    ld  r4, lib_save_r4
 		ret
 	
 	div_not1:
