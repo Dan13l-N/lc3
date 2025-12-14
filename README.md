@@ -1,12 +1,16 @@
 # A small LC3 library
-Here are some LC3 routines. LC3 is a virtual machine with an extremely poor instruction set.
+Here are some LC3 routines I wrote in two days. LC3 is a virtual machine with an *extremely* poor instruction set.
 
 Read more about LC3 here: https://en.wikipedia.org/wiki/Little_Computer_3
 
 A web emulator is available here: https://lc3.cs.umanitoba.ca/
 
 ## My routines
-I've decided to write a couple of simple assembly routines for LC3. This is a *horrible* (imagined) CPU. It has no *or*, *xor*. It has *no bit shifts*. It only has a very bare minimum. Of course, this is intentional, it's meant as a teaching device.
+I've decided to write a couple of simple assembly routines for LC3. This is a *horrible* (imagined) CPU. It has no `or`, `xor` or `sub`. It has *no bit shifts*. It only has a very bare minimum. 
+
+I repeat: no bit shifts.
+
+Of course, this is intentional, it's meant as a teaching device.
 
 I've decided to use the following approach:
 
@@ -20,11 +24,11 @@ I've decided to use the following approach:
 
 The routine converts a number in R1 into an ASCII string, and stores into a buffer which adress is in R1.
 
-Both registers are changed. The buffer must have at least 7 words of room (.blkw 7). The string will be zero-terminated, so it can be used with **puts**.
+Both registers are changed. The buffer must have at least 7 words of room (.blkw 7). The string will be zero-terminated, so it can be used with `puts`.
 
 ### **printnum(r0)**
 
-Prints the number in R0 on the console. It's just a thin wrapper around **itoa** and **puts**.
+Prints the number in R0 on the console. It's just a thin wrapper around my `itoa` and standard routine `puts`.
 
 ### **multiply(r0, r1) -> r0**
 
